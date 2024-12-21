@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+
+int main() {
+    std::vector<int> nums = {6, 9, 1, 2, 5, 2, 1};
+    std::vector<int> uniqueElements; 
+
+    for (int num : nums) {
+        bool Dublicate = false; 
+
+        for (int uniqueNum : uniqueElements) {
+            if (num == uniqueNum) {
+                Dublicate = true; 
+                break; 
+            }
+        }
+
+        if (!Dublicate) {
+            uniqueElements.push_back(num);
+        }
+    }
+
+    for (int uniqueNum : uniqueElements) {
+        std::cout << uniqueNum << " "; 
+    }
+    
+    std::cout << std::endl; 
+
+    return 0; 
+}
